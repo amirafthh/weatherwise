@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWise | Activities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+        }
+
+        li, a, button {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #450920;
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            background-color: #C6D2ED;
+        }
+
+        .logo {
+            cursor: pointer;
+            width: 9%; 
+            background-color: #C6D2ED;   
+        }
+
+        nav {
+            text-align: center; 
+            width: 100%; 
+        }
+
+        .nav {
+            display: inline-block; 
+            padding: 0; 
+        }
+
+        .nav li {
+            display: inline-block; 
+            padding: 0px 20px;
+            background-color: #C6D2ED;
+        }
+
+        .nav li a {
+            transition: all 0.3s ease 0s;
+            background-color: #C6D2ED;
+        }
+
+        .nav li a:hover {
+            color: #C0B9DD;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: #C6D2ED;
+        }
+
+        .footercontainer {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .socicons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .socicons a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .socicons a i {
+            font-size: 2em;
+            color: #450920;
+        }
+
+        .socicons a:hover {
+            background-color: #C0B9DD;
+            transition: 0.5s;
+        }
+
+        .socicons a:hover i {
+            color: #450920;
+            transition: 0.5s;
+        }
+
+        .footernav {
+            margin: 22px 0;
+        }
+
+        .footernav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .footernav ul li a {
+            color: #450920;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: 0.5s
+        }
+
+        .footernav ul li a:hover {
+            color: #C0B9DD;
+        }
+
+        .copyright {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .copyright p {
+            color: #450920;
+        }
+
+        span {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+
+        @media (max-width: 700px){
+            .footernav ul{
+                flex-direction: column;
+                gap: 10px;
+            } 
+            .footernav ul li{
+                width:100%;
+                text-align: center;
+                margin: 10px;
+            }
+            .socicons a{
+                padding: 8px;
+                margin: 4px;
+            }
+        }
+
+        h1 {
+            color: #450920;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #450920;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .activity-card {
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .activity-card h3 {
+            color: #450920;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .activity-card p {
+            color: #450920;
+            font-size: 1em;
+            margin: 30px 0;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .activity-card button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            margin-left: 15px;
+            background-color: #C0B9DD;
+            color: #450920;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .activity-card button:hover {
+            background-color: #e7e6f7;
+        }
+
+        buttonNote {
+            margin-right: 10px; 
+            padding: 10px 15px;
+            background-color: #C0B9DD;
+            color: #450920;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        buttonDelete {
+            padding: 10px 15px;
+            background-color: #C0B9DD;
+            color: #450920;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+
+        }
+
+        @media (max-width: 700px) {
+            .activity-card {
+                width: 90%;
+            }
+
+            .activity-card h3 {
+                font-size: 1.2em;
+            }
+
+            .activity-card button {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="apps logo.png" alt="logo" />
+        <nav>
+            <ul class="nav">
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="homepage.html">SEARCH</a></li>
+                <li><a href="#activityList">ACTIVITIES</a></li>
+                <li><a href="#userActivitiesList">ACTIVITY LIST</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br><br>
+    <h1>Suggested Activities</h1>
+    <ul id="activityList"></ul>
+    
+    <br><br>
+    <h2>Your Activities List</h2>
+    <ul id="userActivitiesList"></ul>
+    <br>
+
+    <footer>
+        <div class="footercontainer">
+            <div class="socicons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="footernav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="homepage.html">Search</a></li>
+                    <li><a href="#activityList">Activities</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy;2024 ; Designed by<span>Amirah Fatihah</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="activities.js"></script>
+</body>
+</html>
